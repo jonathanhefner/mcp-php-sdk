@@ -264,7 +264,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/Mcp-JsonRpc-MessageFactory.html#method_findMessageClassByMethod">findMessageClassByMethod()</a>
     <span>
-                                &nbsp;: string    </span>
+                                &nbsp;: <abbr title="class-string<\Mcp\Schema\JsonRpc\Request>">Request></abbr>|<abbr title="class-string<\Mcp\Schema\JsonRpc\Notification>">Notification></abbr>    </span>
 </dt>
 <dd>Finds the registered message class for a given method name.</dd>
 
@@ -298,7 +298,7 @@
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;int, <abbr title="class-string<\Mcp\Schema\JsonRpc\Request>">Request></abbr>|<abbr title="class-string<\Mcp\Schema\JsonRpc\Notification>">Notification></abbr>&gt;</span>
     <span class="phpdocumentor-signature__name">REGISTERED_MESSAGES</span>
     = <span class="phpdocumentor-signature__default-value">[\Mcp\Schema\Notification\CancelledNotification::class, \Mcp\Schema\Notification\InitializedNotification::class, \Mcp\Schema\Notification\LoggingMessageNotification::class, \Mcp\Schema\Notification\ProgressNotification::class, \Mcp\Schema\Notification\PromptListChangedNotification::class, \Mcp\Schema\Notification\ResourceListChangedNotification::class, \Mcp\Schema\Notification\ResourceUpdatedNotification::class, \Mcp\Schema\Notification\RootsListChangedNotification::class, \Mcp\Schema\Notification\ToolListChangedNotification::class, \Mcp\Schema\Request\CallToolRequest::class, \Mcp\Schema\Request\CompletionCompleteRequest::class, \Mcp\Schema\Request\CreateSamplingMessageRequest::class, \Mcp\Schema\Request\GetPromptRequest::class, \Mcp\Schema\Request\InitializeRequest::class, \Mcp\Schema\Request\ListPromptsRequest::class, \Mcp\Schema\Request\ListResourcesRequest::class, \Mcp\Schema\Request\ListResourceTemplatesRequest::class, \Mcp\Schema\Request\ListRootsRequest::class, \Mcp\Schema\Request\ListToolsRequest::class, \Mcp\Schema\Request\PingRequest::class, \Mcp\Schema\Request\ReadResourceRequest::class, \Mcp\Schema\Request\ResourceSubscribeRequest::class, \Mcp\Schema\Request\ResourceUnsubscribeRequest::class, \Mcp\Schema\Request\SetLogLevelRequest::class]</span>
 </code>
@@ -385,7 +385,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$registeredMessages</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, <abbr title="class-string<\Mcp\Schema\JsonRpc\Request>">Request></abbr>|<abbr title="class-string<\Mcp\Schema\JsonRpc\Notification>">Notification></abbr>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$registeredMessages</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -395,7 +395,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$registeredMessages</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, <abbr title="class-string<\Mcp\Schema\JsonRpc\Request>">Request></abbr>|<abbr title="class-string<\Mcp\Schema\JsonRpc\Notification>">Notification></abbr>&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -602,7 +602,7 @@ MessageInterface objects or InvalidInputMessageException instances for invalid m
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">findMessageClassByMethod</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$method</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">findMessageClassByMethod</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$method</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="class-string<\Mcp\Schema\JsonRpc\Request>">Request></abbr>|<abbr title="class-string<\Mcp\Schema\JsonRpc\Notification>">Notification></abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -640,7 +640,7 @@ MessageInterface objects or InvalidInputMessageException instances for invalid m
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
+        <span class="phpdocumentor-signature__response_type"><abbr title="class-string<\Mcp\Schema\JsonRpc\Request>">Request></abbr>|<abbr title="class-string<\Mcp\Schema\JsonRpc\Notification>">Notification></abbr></span>
             </section>
 
 </article>

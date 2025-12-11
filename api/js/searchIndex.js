@@ -5128,7 +5128,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Mcp\\Server\\Session\\Psr16StoreSession",
             "name": "Psr16StoreSession",
-            "summary": "",
+            "summary": "PSR\u002D16\u0020compliant\u0020cache\u002Dbased\u0020session\u0020store.",
             "url": "classes/Mcp-Server-Session-Psr16StoreSession.html"
         },                {
             "fqsen": "\\Mcp\\Server\\Session\\Psr16StoreSession\u003A\u003A__construct\u0028\u0029",
