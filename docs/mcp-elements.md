@@ -6,7 +6,7 @@ discovery and manual registration methods.
 
 ## Table of Contents
 
-- [Overview](#overview)
+- [Overview](.#overview)
 - [Tools](#tools)
 - [Resources](#resources)
 - [Resource Templates](#resource-templates)
@@ -21,7 +21,7 @@ discovery and manual registration methods.
 MCP defines four types of capabilities:
 
 - **Tools**: Functions that can be called by clients to perform actions
-- **Resources**: Data sources that clients can read (static URIs)  
+- **Resources**: Data sources that clients can read (static URIs)
 - **Resource Templates**: URI templates for dynamic resources with variables
 - **Prompts**: Template generators for AI prompts
 
@@ -37,7 +37,7 @@ Each capability can be registered using two methods:
 **Priority**: Manual registrations **always override** discovered elements with the same identifier:
 - **Tools**: Same `name`
 - **Resources**: Same `uri`
-- **Resource Templates**: Same `uriTemplate`  
+- **Resource Templates**: Same `uriTemplate`
 - **Prompts**: Same `name`
 
 For manual registration details, see [Server Builder Manual Registration](server-builder.md#manual-capability-registration).
@@ -89,7 +89,7 @@ Tools can return any data type and the SDK will automatically wrap them in appro
 ```php
 // Primitive types → TextContent
 public function getString(): string { return "Hello"; }           // TextContent
-public function getNumber(): int { return 42; }                  // TextContent  
+public function getNumber(): int { return 42; }                  // TextContent
 public function getBool(): bool { return true; }                 // TextContent
 public function getArray(): array { return ['key' => 'value']; } // TextContent (JSON)
 
@@ -110,7 +110,7 @@ public function getFormattedCode(): TextContent
     return TextContent::code('<?php echo "Hello";', 'php');
 }
 
-public function getMarkdown(): TextContent  
+public function getMarkdown(): TextContent
 {
     return new TextContent('# Title\n\nMarkdown content');
 }
@@ -235,13 +235,13 @@ Resource handlers can return various data types that are automatically formatted
 
 ```php
 // String content - converted to text resource
-public function getTextFile(): string 
+public function getTextFile(): string
 {
     return "File content here";
 }
 
 // Array content - converted to JSON
-public function getConfig(): array 
+public function getConfig(): array
 {
     return ['debug' => true, 'version' => '1.0'];
 }
@@ -292,7 +292,7 @@ public function getTextArray(): array
     return ['text' => 'Content here', 'mimeType' => 'text/plain'];
 }
 
-// Array with 'blob' key - used as blob content  
+// Array with 'blob' key - used as blob content
 public function getBlobArray(): array
 {
     return ['blob' => base64_encode($data), 'mimeType' => 'image/png'];
@@ -372,7 +372,7 @@ class UserProvider
 ### Variable Rules
 
 1. **Variable names must match exactly** between URI template and method parameters
-2. **Parameter order matters** - variables are passed in the order they appear in the URI template  
+2. **Parameter order matters** - variables are passed in the order they appear in the URI template
 3. **All variables are required** - no optional parameters supported
 4. **Type hints work normally** - parameters can be typed (string, int, etc.)
 
@@ -448,7 +448,7 @@ public function mixedContent(): array
 {
     return [
         [
-            'role' => 'user', 
+            'role' => 'user',
             'content' => [
                 new TextContent('Analyze this image:'),
                 new ImageContent(data: $imageData, mimeType: 'image/png')
@@ -474,8 +474,8 @@ The SDK automatically validates that all messages have valid roles and converts 
 
 #### Valid Message Roles
 
-- **`user`**: User input or questions  
-- **`assistant`**: Assistant responses/system 
+- **`user`**: User input or questions
+- **`assistant`**: Assistant responses/system
 
 #### Error Handling
 
@@ -524,9 +524,9 @@ public function processData(string $input, RequestContext $context): array {
 
     $logger->info('Processing started', ['input' => $input]);
     $logger->warning('Deprecated API used');
-    
+
     // ... processing logic ...
-    
+
     $logger->info('Processing completed');
     return ['result' => 'processed'];
 }
@@ -549,7 +549,7 @@ use Mcp\Capability\Attribute\CompletionProvider;
 public function generateContent(
     #[CompletionProvider(values: ['blog', 'article', 'tutorial', 'guide'])]
     string $contentType,
-    
+
     #[CompletionProvider(values: ['beginner', 'intermediate', 'advanced'])]
     string $difficulty
 ): array
@@ -582,10 +582,10 @@ enum Status  // Unit enum
 #[McpResourceTemplate(uriTemplate: 'tasks/{taskId}')]
 public function getTask(
     string $taskId,
-    
+
     #[CompletionProvider(enum: Priority::class)]  // Uses backing values
     string $priority,
-    
+
     #[CompletionProvider(enum: Status::class)]    // Uses case names
     string $status
 ): array
@@ -629,7 +629,7 @@ public function getUserProfile(
 - **Enums** (`MyEnum::class`) → Wrapped in `EnumCompletionProvider`
 
 > **Important**
-> 
+>
 > Completion providers only offer **suggestions** to users. Users can still input any value, so **always validate
 > parameters** in your handlers. Providers don't enforce validation - they're purely for UX improvement.
 
@@ -673,10 +673,10 @@ use Mcp\Capability\Attribute\Schema;
 public function validateUser(
     #[Schema(format: 'email')]
     string $email,
-    
+
     #[Schema(minimum: 18, maximum: 120)]
     int $age,
-    
+
     #[Schema(
         pattern: '^[A-Z][a-z]+$',
         description: 'Capitalized first name'
